@@ -1,0 +1,9 @@
+{% extends 'main.html' %}
+{% block content %}
+    <form method="POST" action="">
+        {% csrf_token %} <!-- {% csrf_token %} # just for Django Security -->
+        <p>Are you sure to delet this room "{{ obj }}"?</p>
+        <a href="{{ request.META.HTTP_REFERER }}">Go Back</a>
+        <input type="submit" name="delete" value="confirm">
+    </form>
+{% endblock content %}

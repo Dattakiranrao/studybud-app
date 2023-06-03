@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}   <!-- {% csrf_token %} # just for Django Security -->
+        {{form.as_p}}
+        
+       <input type="submit" name="input" value="submit"> 
+
+    </form>
+</div>
+
+{% endblock content%}
