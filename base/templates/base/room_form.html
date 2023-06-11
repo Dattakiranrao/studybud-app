@@ -24,12 +24,14 @@
                         {% csrf_token %}            <!-- {% csrf_token %} # just for Django Security -->
                         <div class="form__group">
                             <label for="room_topic">Room Topic</label>
-                            <input type="text" value="{{room.topic.name}}"  name="topic" list="topic-list" required />
+                            <input type="text"
+                                   value="{{ room.topic.name }}"
+                                   name="topic"
+                                   list="topic-list"
+                                   required />
                             <datalist id="topic-list">
                                 <select id="room_topic">
-                                    {% for topic in topics  %}
-                                    <option value="{{ topic.name }}">{{ topic.name }}</option>
-                                    {% endfor %}
+                                    {% for topic in topics %}<option value="{{ topic.name }}">{{ topic.name }}</option>{% endfor %}
                                 </select>
                             </datalist>
                         </div>
@@ -41,7 +43,6 @@
                             <label for="room_name">Room Description</label>
                             {{ field.description }}
                         </div>
-
                         <!-- example for making a drop down in django -->
                         <!-- <div class="form__group"> -->
                         <!--     <label for="room_topic">Topic</label> -->
@@ -54,7 +55,6 @@
                         <!--         </select> -->
                         <!--     </datalist> -->
                         <!-- </div> -->
-
                         <div class="form__group">
                             <label for="room_about">About</label>
                             <textarea name="room_about"
